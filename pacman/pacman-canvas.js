@@ -638,7 +638,7 @@ function geronimo() {
 		this.dazzleImg2 = new Image();
 		this.dazzleImg2.src = 'img/building.svg';
 		this.deadImg = new Image();
-		this.deadImg.src = 'img/building.svg';
+		this.deadImg.src = 'img/databaseWhite.svg';
 		this.direction = right;
 		this.radius = pacman.radius;
 		this.draw = function (context) {					
