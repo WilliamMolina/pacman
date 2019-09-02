@@ -30,10 +30,11 @@ function geronimo() {
 	}
 	function ajax_get() {
 		var date = new Date().getTime();
+		var server = location.protocol + "//" + location.hostname + ":5000";
 		$.ajax({
 		   datatype: "json",
 		   type: "GET",
-		   url: "http://localhost:5000/highscore",
+		   url: server + "/highscore",
 		   data: {
 			 timestamp: date,
 			 action: "get"
@@ -273,7 +274,7 @@ function geronimo() {
 		this.drawHearts = function (count) {
 			var html = "";
 			for (var i = 0; i<count; i++) {
-				html += " <img src='img/heart.png'>";
+				html += " <img src='img/haws.png'>";
 				}
 			$(".lives").html("Lives: "+html);
 			
@@ -404,10 +405,10 @@ function geronimo() {
 			
 			// initalize Ghosts, avoid memory flooding
 			if (pinky === null || pinky === undefined) {
-				pinky = new Ghost("pinky",7,5,'img/pinky.svg',2,2);
-				inky = new Ghost("inky",8,5,'img/inky.svg',13,11);
-				blinky = new Ghost("blinky",9,5,'img/blinky.svg',13,0);
-				clyde = new Ghost("clyde",10,5,'img/clyde.svg',2,11);
+				pinky = new Ghost("pinky",7,5,'img/buildingred.svg',2,2);
+				inky = new Ghost("inky",8,5,'img/buildingpurple.svg',13,11);
+				blinky = new Ghost("blinky",9,5,'img/buildingorange.svg',13,0);
+				clyde = new Ghost("clyde",10,5,'img/buildingcian.svg',2,11);
 			}
 			else {
 				//console.log("ghosts reset");
@@ -633,11 +634,11 @@ function geronimo() {
 			this.dazzled = false;
 		}
 		this.dazzleImg = new Image();
-		this.dazzleImg.src = 'img/dazzled.svg';
+		this.dazzleImg.src = 'img/building.svg';
 		this.dazzleImg2 = new Image();
-		this.dazzleImg2.src = 'img/dazzled2.svg';
+		this.dazzleImg2.src = 'img/building.svg';
 		this.deadImg = new Image();
-		this.deadImg.src = 'img/dead.svg';
+		this.deadImg.src = 'img/building.svg';
 		this.direction = right;
 		this.radius = pacman.radius;
 		this.draw = function (context) {					
